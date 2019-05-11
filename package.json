@@ -1,0 +1,71 @@
+{
+  "name": "svg.edit.js",
+  "version": "1.0.0",
+  "description": "An extension for svg.js to edit shapes using concept of control points",
+  "main": "dist/svg.edit.js",
+  "unpkg": "dist/svg.edit.min.js",
+  "jsdelivr": "dist/svg.edit.min.js",
+  "browser": "src/svg.edit.js",
+  "module": "src/svg.edit.js",
+  "keywords": [
+    "svg.js",
+    "svg",
+    "path"
+  ],
+  "bugs": "https://github.com/JanMisker/svg.edit.js/issues",
+  "license": "MIT",
+  "typings": "./svg.edit.js.d.ts",
+  "author": {
+    "name": "Jan Misker"
+  },
+  "contributors": [
+    {
+      "name": "Jan Misker"
+    }
+  ],
+  "homepage": "https://github.com/JanMisker/svg.edit.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JanMisker/svg.edit.js.git"
+  },
+  "scripts": {
+    "build": "npm run fix && npm run rollup",
+    "fix": "npx eslint ./src --fix",
+    "lint": "npx eslint ./src",
+    "rollup": "npx rollup -c .config/rollup.config.js",
+    "zip": "zip -j dist/svg.edit.js.zip -- LICENSE README.md dist/svg.edit.js dist/svg.edit.js.map dist/svg.edit.min.js dist/svg.edit.min.js.map",
+    "prepublishOnly": "rm -rf ./dist && npm run build",
+    "postpublish": "npm run zip"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/runtime": "^7.2.0",
+    "@babel/runtime-corejs2": "^7.2.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.1",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-filesize": "^6.0.0",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^4.0.2",
+    "rollup-plugin-uglify": "^6.0.1",
+    "rollup-plugin-uglify-es": "0.0.1"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.0.12"
+  }
+}
